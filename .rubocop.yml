@@ -1,0 +1,7 @@
+Style/ModuleFunction:
+  Enabled: false
+
+Metrics/BlockLength:
+  Exclude:
+    - spec/*
+    - spec/**/*spec.rb

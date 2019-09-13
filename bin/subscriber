@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'rubygems'
+require 'bundler/setup'
+require File.expand_path(File.join(File.dirname(__FILE__), '..',
+                                   'config', 'environment'))
+
+trap 'TTIN' do
+  Thread.list.each do |thread|
+    puts "Thread TID-#{thread.object_id.to_s(36)}"
+    puts thread.backtrace.join("\n")
+  end
+end
+
+ContextRequestSubscriber.run
