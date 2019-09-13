@@ -2,6 +2,7 @@
 # frozen_string_literal: true
 
 require 'rubygems'
+require 'byebug'
 require 'bundler/setup'
 require File.expand_path(File.join(File.dirname(__FILE__), '..',
                                    'config', 'environment'))

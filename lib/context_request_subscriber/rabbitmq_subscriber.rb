@@ -47,7 +47,7 @@ module ContextRequestSubscriber
     end
 
     def run
-      channel = create_channel
+      channel = create_channel(@session_params)
       queue = bind_queue
       @consumer = queue.subscribe(manual_ack: true,
                                   block: false) do |info, properties, payload|

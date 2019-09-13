@@ -18,6 +18,7 @@ ContextRequestSubscriber.configure do |config|
                  end
 
   config[:session_params] = {} unless config[:session_params]
+  config[:session_params][:vhost] = ENV.fetch('RABBITMQ_VHOST', '/')
   config[:session_params][:heartbeat] =
     ENV.fetch('RABBITMQ_HEARTBEAT_SUBSCRIBER', :server)
   config[:session_params][:network_recovery_interval] = 4
