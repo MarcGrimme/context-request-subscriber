@@ -6,7 +6,8 @@ module ContextRequestSubscriber
   module Processor
     RSpec.describe Request do
       let(:payload) { JsonHelper.parse_file('request') }
-      subject { described_class.new }
+      let(:logger) { instance_double('Logger') }
+      subject { described_class.new(logger) }
 
       describe 'call' do
         before do

@@ -5,3 +5,7 @@ Metrics/BlockLength:
   Exclude:
     - spec/*
     - spec/**/*spec.rb
+Metrics/ModuleLength:
+  Exclude:
+    - spec/*
+    - spec/**/*spec.rb

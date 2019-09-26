@@ -3,7 +3,7 @@
 module ContextRequestSubscriber
   module Handler
     class MockHandler
-      def initialize(payload)
+      def initialize(payload, **_keys)
         @payload = payload
       end
 

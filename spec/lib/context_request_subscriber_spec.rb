@@ -8,7 +8,10 @@ RSpec.describe ContextRequestSubscriber do
       expect(described_class.logger).to be_an_instance_of(Logger)
       expect(described_class.exchange_name).to eq('fos.context_request')
       expect(described_class.queue_name).to eq('fos.context_request')
-      expect(described_class.handlers).to eq({})
+      expect(described_class.handlers).to eq(
+        context: ContextRequestSubscriber::Handler::JsonApiHandler::Context,
+        request: ContextRequestSubscriber::Handler::JsonApiHandler::Request
+      )
     end
   end
 

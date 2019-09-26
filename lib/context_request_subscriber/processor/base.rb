@@ -4,11 +4,16 @@ module ContextRequestSubscriber
   module Processor
     # :nodoc:
     class Base
+      def initialize(logger, **keys)
+        @logger = logger
+        @handler_params = keys[:handler_params] || {}
+      end
+
       def call(payload)
         if (handler = ContextRequestSubscriber.handlers[type_name])
-          handler.new(payload).call
+          handler.new(payload, **@handler_params).call
         else
-          ContextRequestSubscriber.logger.error("Could not find handler for \
+          @logger.error("Could not find handler for \
 message type #{type_name}")
         end
       end

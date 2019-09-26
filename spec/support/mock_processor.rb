@@ -5,7 +5,7 @@ module ContextRequestSubscriber
     class MockProcessor < Base; end
     class MockExceptionProcessor < Base
       def call(*_ignore)
-        raise StandardError(self.class.name)
+        raise StandardError, self.class.name
       end
     end
   end

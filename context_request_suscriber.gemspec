@@ -4,7 +4,7 @@ $LOAD_PATH.push File.expand_path('lib', __dir__)
 require 'context_request_subscriber/version'
 
 Gem::Specification.new do |s|
-  s.name        = 'context-request-subscriber'
+  s.name        = 'context_request_subscriber'
   s.version     = ContextRequestSubscriber::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ['Marc Grimme']
@@ -14,10 +14,9 @@ Gem::Specification.new do |s|
   s.summary     = %(RabbitMQ MessageQueue Subsriber to track requests \
 and map to contexts)
 
-  s.rubyforge_project = 'context-request-subscriber'
-
   s.add_runtime_dependency 'activesupport'
   s.add_runtime_dependency 'bunny'
+  s.add_runtime_dependency 'json_api_client'
   s.add_development_dependency 'license_finder', '~> 5.10'
   s.add_development_dependency 'rake', '~> 12'
   s.add_development_dependency 'rspec', '~> 3.8'

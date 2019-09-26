@@ -5,14 +5,13 @@ require 'spec_helper'
 module ContextRequestSubscriber
   RSpec.describe RabbitMQSubscriber do
     describe '#run' do
-      let(:processor) { Processor::MockProcessor.new }
-      let(:session_params) { {} }
+      let(:session_params) { { automatically_recover: true, threaded: true } }
       let(:url) { nil }
-      let(:bunny_session) { double('bunny_session') }
-      let(:bunny_channel) { double('bunny_channel') }
+      let(:connection) { double('connection') }
+      let(:channel) { double('channel', exchanges: exchanges) }
       let(:exchange) { double('exchange') }
+      let(:exchanges) { { exchange_name => exchange } }
       let(:exchange_name) { ContextRequestSubscriber.exchange_name }
-      let(:channel) { double('channel') }
       let(:queue) { double('queue') }
       let(:properties) { { type: 'mock_processor' } }
       let(:payload) { '{}' }
@@ -20,78 +19,94 @@ module ContextRequestSubscriber
         double('DeliveryInfo', delivery_tag: 'anything',
                                to_hash: { delivery_tag: 'anything' })
       end
-      let(:logger) { instance_double('Logger', error: nil) }
-      let(:config) { ContextRequestSubscriber.config }
+      let(:logger) { instance_double('Logger', error: nil, debug: nil) }
+      let(:config) do
+        ContextRequestSubscriber
+          .config.merge(logger: logger,
+                        on_error: ErrorHandler::LogAndRaiseErrorHandler)
+      end
+      let(:processor) { Processor::MockProcessor.new(logger) }
+      let(:queue_durable) { true }
 
       subject do
-        described_class.new(processor, **config)
+        described_class.new(**{ queue_durable: queue_durable }.merge(config))
       end
 
-      before do
-        allow(ContextRequestSubscriber.config).to receive(:logger) { logger }
-        expect(Bunny).to receive(:new).with(url, session_params)
-                                      .and_return(bunny_session)
-        expect(bunny_session).to receive(:start)
-        expect(bunny_session).to receive(:create_channel)
-          .and_return(bunny_channel)
-        expect(bunny_channel).to receive(:confirm_select)
-        expect(bunny_channel).to receive(:exchanges)
-          .and_return(exchange_name => exchange)
-      end
-
-      context 'happy path' do
+      context 'with bunny impl' do
         before do
-          expect(bunny_channel).to receive(:queue)
+          expect(Bunny).to receive(:new).with(url, session_params)
+                                        .and_return(connection)
+          expect(connection).to receive(:start)
+          expect(connection).to receive(:create_channel)
+            .and_return(channel)
+          expect(channel).to receive(:queue)
             .with(ContextRequestSubscriber.queue_name,
                   exclusive: false,
-                  durable: true)
+                  durable: queue_durable)
             .and_return(queue)
-          expect(exchange).to receive(:channel).and_return(channel)
-          expect(queue).to receive(:bind).with(exchange, nil)
+        end
+
+        context 'happy path' do
+          before do
+            expect(queue).to receive(:bind).with(exchange, routing_key: '#')
+            expect(queue).to receive(:subscribe)
+              .with(manual_ack: true, block: false)
+              .and_yield(delivery_info, properties, payload)
+            expect(exchange).to receive_message_chain(:channel,
+                                                      :work_pool, :join)
+              .and_return(nil)
+          end
+          context 'with existent queue' do
+            it { expect(subject.run).to be_nil }
+          end
+
+          context 'with queue_opts' do
+            let(:queue_durable) { false }
+            it { expect(subject.run).to be_nil }
+          end
+
+          context 'with non existent exchange' do
+            let(:exchanges) { {} }
+
+            before do
+              expect(Bunny::Exchange).to receive(:new)
+                .with(channel, 'topic', exchange_name, {}).and_return(exchange)
+            end
+
+            it { expect(subject.run).to be_nil }
+          end
+        end
+
+        context 'handle_error' do
+          let(:properties) { { type: 'mock_exception_processor' } }
+
+          before do
+            expect(queue).to receive(:bind).with(exchange, routing_key: '#')
+            expect(queue).to receive(:subscribe)
+              .with(manual_ack: true, block: false)
+              .and_yield(delivery_info, properties, payload)
+          end
+
+          it do
+            expect { subject.run }.to raise_error(StandardError)
+          end
+        end
+      end
+
+      context 'with fetch_queue_callback' do
+        before do
+          allow(ContextRequestSubscriber.config).to receive(:logger) { logger }
+          get_queue = ->(_context) { [exchange, queue] }
           expect(queue).to receive(:subscribe)
             .with(manual_ack: true, block: false)
             .and_yield(delivery_info, properties, payload)
-          expect(channel).to receive(:ack).with('anything')
+          expect(ContextRequestSubscriber).to receive(:fetch_queue_callback)
+            .and_return(get_queue)
+          expect(exchange).to receive_message_chain(:channel,
+                                                    :work_pool, :join)
+            .and_return(nil)
         end
         it { expect(subject.run).to be_nil }
-      end
-
-      context 'non existing exchange' do
-        let(:exchange_name) { 'none' }
-        it do
-          expect { subject.run }
-            .to raise_error(RabbitMQSubscriber::ExchangeNotFound)
-        end
-      end
-
-      context 'special config' do
-        let(:exchange_name) { 'none' }
-        let(:config) do
-          { queue_name: 'myqueue', queue_durable: true }
-        end
-        it do
-          expect { subject.run }
-            .to raise_error(RabbitMQSubscriber::ExchangeNotFound)
-        end
-      end
-
-      context 'handle_error' do
-        let(:properties) { { type: 'mock_exception_processor' } }
-
-        before do
-          expect(bunny_channel).to receive(:queue)
-            .with(ContextRequestSubscriber.queue_name,
-                  exclusive: false,
-                  durable: true)
-            .and_return(queue)
-          expect(exchange).to receive(:channel).and_return(channel)
-          expect(queue).to receive(:bind).with(exchange, nil)
-          expect(queue).to receive(:subscribe)
-            .with(manual_ack: true, block: false)
-            .and_yield(delivery_info, properties, payload)
-        end
-
-        it { expect { subject.run }.to raise_error StandardError }
       end
     end
   end

@@ -25,4 +25,15 @@ ContextRequestSubscriber.configure do |config|
   config[:session_params][:continuation_timeout] = 3000
   config[:session_params][:auth_mechanism] = 'PLAIN'
   config[:routing_key] = '#'
+  config.logger.level = begin
+                          Logger.const_get(ENV.fetch('LOG_LEVEL', '').upcase)
+                        rescue StandardError
+                          Logger::INFO
+                        end
+  config.handler_params = {
+    site: ENV.fetch('HANDLER_URL', 'http://localhost'),
+    handler_headers: {
+      'Authorization' => "Token #{ENV['HANDLER_API_TOKEN']}"
+    }
+  }
 end

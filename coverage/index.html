@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2019-09-13T13:17:25+02:00">2019-09-13T13:17:25+02:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2019-09-26T17:20:14+02:00">2019-09-26T17:20:14+02:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,15 +25,15 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.85
+         2.62
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>7</b> files in total.
-    <b>114</b> relevant lines. 
-    <span class="green"><b>114</b> lines covered</span> and
+    <b>9</b> files in total.
+    <b>171</b> relevant lines. 
+    <span class="green"><b>171</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -53,9 +53,9 @@
       <tr>
         <td class="strong"><a href="#cc710ddcee0588d0b7d954451c7c6c4140cade3a" class="src_link" title="lib/context_request_subscriber.rb">lib/context_request_subscriber.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>57</td>
-        <td>25</td>
-        <td>25</td>
+        <td>79</td>
+        <td>33</td>
+        <td>33</td>
         <td>0</td>
         <td>1.1</td>
       </tr>
@@ -63,31 +63,51 @@
       <tr>
         <td class="strong"><a href="#ac7b1f41b90016381fbd6b358beff1bfa7770d45" class="src_link" title="lib/context_request_subscriber/error_handler.rb">lib/context_request_subscriber/error_handler.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>25</td>
-        <td>11</td>
-        <td>11</td>
+        <td>26</td>
+        <td>12</td>
+        <td>12</td>
         <td>0</td>
-        <td>1.3</td>
+        <td>2.0</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#b139ea9264c7be2845d46a9f9206ddc195125eb3" class="src_link" title="lib/context_request_subscriber/handler.rb">lib/context_request_subscriber/handler.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>7</td>
+        <td>2</td>
+        <td>2</td>
+        <td>0</td>
+        <td>1.0</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#361934a674e809623b7d586a7b02b1baf7536bfd" class="src_link" title="lib/context_request_subscriber/handler/json_api_handler.rb">lib/context_request_subscriber/handler/json_api_handler.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>30</td>
+        <td>14</td>
+        <td>14</td>
+        <td>0</td>
+        <td>1.2</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#1fc0848e754e41a24f84ad4c2b2ed050d628ef11" class="src_link" title="lib/context_request_subscriber/processor.rb">lib/context_request_subscriber/processor.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>39</td>
-        <td>20</td>
-        <td>20</td>
+        <td>59</td>
+        <td>28</td>
+        <td>28</td>
         <td>0</td>
-        <td>2.1</td>
+        <td>3.8</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#c0d32c64b66e6737deee16410b2d2d6a634bac95" class="src_link" title="lib/context_request_subscriber/processor/base.rb">lib/context_request_subscriber/processor/base.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>23</td>
-        <td>10</td>
-        <td>10</td>
+        <td>28</td>
+        <td>13</td>
+        <td>13</td>
         <td>0</td>
-        <td>2.0</td>
+        <td>3.8</td>
       </tr>
       
       <tr>
@@ -113,11 +133,11 @@
       <tr>
         <td class="strong"><a href="#1bad8ae8a6a9ea9f53586a71e8a690acda72df9a" class="src_link" title="lib/context_request_subscriber/rabbitmq_subscriber.rb">lib/context_request_subscriber/rabbitmq_subscriber.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>97</td>
-        <td>42</td>
-        <td>42</td>
+        <td>152</td>
+        <td>63</td>
+        <td>63</td>
         <td>0</td>
-        <td>2.4</td>
+        <td>3.3</td>
       </tr>
       
     </tbody>
@@ -141,8 +161,8 @@
     <h3>lib/context_request_subscriber.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>25</b> relevant lines. 
-      <span class="green"><b>25</b> lines covered</span> and
+      <b>33</b> relevant lines. 
+      <span class="green"><b>33</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -165,328 +185,460 @@
         <li class="covered" data-hits="1" data-linenumber="3">
           <span class="hits">1</span>
           
-          <code class="ruby">require &#39;active_support&#39;</code>
+          <code class="ruby">require &#39;json&#39;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="4">
           <span class="hits">1</span>
           
-          <code class="ruby">require &#39;active_support/inflector&#39;</code>
+          <code class="ruby">require &#39;active_support&#39;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="5">
           <span class="hits">1</span>
           
-          <code class="ruby">require &#39;context_request_subscriber/processor&#39;</code>
+          <code class="ruby">require &#39;active_support/inflector&#39;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="6">
           <span class="hits">1</span>
           
-          <code class="ruby">require &#39;context_request_subscriber/error_handler&#39;</code>
+          <code class="ruby">require &#39;context_request_subscriber/handler&#39;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="7">
           <span class="hits">1</span>
           
+          <code class="ruby">require &#39;context_request_subscriber/processor&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="8">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require &#39;context_request_subscriber/error_handler&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="9">
+          <span class="hits">1</span>
+          
           <code class="ruby">require &#39;context_request_subscriber/rabbitmq_subscriber&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="8">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="9">
-          
-          
-          <code class="ruby"># Base module for the context request subscriber.</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="10">
           
           
-          <code class="ruby"># This class provides all the configurables to the logic for the</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="11">
           
           
+          <code class="ruby"># Base module for the context request subscriber.</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="12">
+          
+          
+          <code class="ruby"># This class provides all the configurables to the logic for the</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="13">
+          
+          
           <code class="ruby"># subscriber and handler logic of the request context logic.</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="12">
-          <span class="hits">1</span>
-          
-          <code class="ruby">module ContextRequestSubscriber</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="13">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  include ActiveSupport::Configurable</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="14">
           <span class="hits">1</span>
           
-          <code class="ruby">  config_accessor(:logger, instance_accessor: false) do</code>
+          <code class="ruby">module ContextRequestSubscriber</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="15">
           <span class="hits">1</span>
           
-          <code class="ruby">    ActiveSupport::TaggedLogging.new(Logger.new(STDOUT))</code>
+          <code class="ruby">  include ActiveSupport::Configurable</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="16">
+        <li class="covered" data-hits="1" data-linenumber="16">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">  config_accessor(:logger, instance_accessor: false) do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="17">
           <span class="hits">1</span>
           
-          <code class="ruby">  config_accessor(:queue_name, instance_accessor: false) do</code>
+          <code class="ruby">    ActiveSupport::TaggedLogging.new(Logger.new(STDOUT))</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="18">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    &#39;fos.context_request&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="19">
+        <li class="never" data-hits="" data-linenumber="18">
           
           
           <code class="ruby">  end</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="19">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  config_accessor(:queue_name, instance_accessor: false) do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="20">
           <span class="hits">1</span>
           
+          <code class="ruby">    &#39;fos.context_request&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="21">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="22">
+          <span class="hits">1</span>
+          
           <code class="ruby">  config_accessor(:exchange_name, instance_accessor: false) do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="21">
+        <li class="covered" data-hits="1" data-linenumber="23">
           <span class="hits">1</span>
           
           <code class="ruby">    &#39;fos.context_request&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="22">
+        <li class="never" data-hits="" data-linenumber="24">
           
           
           <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="23">
-          
-          
-          <code class="ruby">  # queue_durable: if the queue is durable. Default: true</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="24">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  config_accessor(:queue_durable, instance_accessor: false)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="25">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  # queue_durable: if the queue is durable. Default: true</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="26">
-          
-          
-          <code class="ruby">  # queue_auto_delete: if the queue gets autodeleted.</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="27">
+        <li class="covered" data-hits="1" data-linenumber="26">
           <span class="hits">1</span>
           
-          <code class="ruby">  config_accessor(:queue_auto_delete, instance_accessor: false)</code>
+          <code class="ruby">  config_accessor(:queue_durable, instance_accessor: false)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="27">
+          
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="28">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  # queue_auto_delete: if the queue gets autodeleted.</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="29">
-          
-          
-          <code class="ruby">  # queue_exclusive: default false.</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="30">
+        <li class="covered" data-hits="1" data-linenumber="29">
           <span class="hits">1</span>
           
-          <code class="ruby">  config_accessor(:queue_exclusive, instance_accessor: false)</code>
+          <code class="ruby">  config_accessor(:queue_auto_delete, instance_accessor: false)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="30">
+          
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="31">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  # queue_exclusive: default false.</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="32">
-          
-          
-          <code class="ruby">  # routing_key: the routing_key used. Default nil.</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="33">
+        <li class="covered" data-hits="1" data-linenumber="32">
           <span class="hits">1</span>
           
-          <code class="ruby">  config_accessor(:routing_key, instance_accessor: false)</code>
+          <code class="ruby">  config_accessor(:queue_exclusive, instance_accessor: false)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="33">
+          
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="34">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  # Callable that is called instead of the default logic to return</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="35">
           
           
-          <code class="ruby">  # Hash of small cased classname of callable object to be called in order</code>
+          <code class="ruby">  # a Bunny object for both the channel, the connection and the queue.</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="36">
+        <li class="covered" data-hits="1" data-linenumber="36">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  # to handle the message. The type of the message indicates the handler class.</code>
+          <code class="ruby">  config_accessor(:fetch_queue_callback, instance_accessor: false)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="37">
-          <span class="hits">2</span>
+        <li class="never" data-hits="" data-linenumber="37">
           
-          <code class="ruby">  config_accessor(:handlers, instance_accessor: false) { {} }</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="38">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  # routing_key: the routing_key used. Default #.</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="39">
-          
-          
-          <code class="ruby">  # Set of session parameters</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="40">
+        <li class="covered" data-hits="2" data-linenumber="39">
           <span class="hits">2</span>
           
-          <code class="ruby">  config_accessor(:session_params, instance_accessor: false) { {} }</code>
+          <code class="ruby">  config_accessor(:routing_key, instance_accessor: false) { &#39;#&#39; }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="40">
+          
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="41">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  # Hash of small cased classname of callable object to be called in order</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="42">
           
           
-          <code class="ruby">  # url to connect to the RabbitMQ Server</code>
+          <code class="ruby">  # to handle the message. The type of the message indicates the handler class.</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="43">
+        <li class="never" data-hits="" data-linenumber="43">
+          
+          
+          <code class="ruby">  # Defaults to JsonApiHandler for request and context types.</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="44">
           <span class="hits">1</span>
           
-          <code class="ruby">  config_accessor(:url, instance_accessor: false)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="44">
-          
-          
-          <code class="ruby"></code>
+          <code class="ruby">  config_accessor(:handlers, instance_accessor: false) do</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="45">
           
           
-          <code class="ruby">  # heartbeat: heartbeat for the connection. Defaults to nil.</code>
+          <code class="ruby">    {</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="46">
           <span class="hits">1</span>
           
-          <code class="ruby">  config_accessor(:heartbeat, instance_accessor: false)</code>
+          <code class="ruby">      context: ContextRequestSubscriber::Handler::JsonApiHandler::Context,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="47">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">      request: ContextRequestSubscriber::Handler::JsonApiHandler::Request</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="48">
           
           
-          <code class="ruby">  # on_error: callable object that handles errors during processing the</code>
+          <code class="ruby">    }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="49">
           
           
-          <code class="ruby">  #       message.</code>
+          <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="50">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="50">
           
-          <code class="ruby">  config_accessor(:on_error, instance_accessor: false) do</code>
+          
+          <code class="ruby">  # Handler URL is the url to reach out for handling.</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="51">
           <span class="hits">1</span>
           
-          <code class="ruby">    ErrorHandler::LogErrorHandler.new</code>
+          <code class="ruby">  config_accessor(:handler_url, instance_accessor: false)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="52">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="53">
           
           
+          <code class="ruby">  # Set of session parameters</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="54">
+          <span class="hits">2</span>
+          
+          <code class="ruby">  config_accessor(:session_params, instance_accessor: false) { {} }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="55">
+          
+          
           <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="54">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def self.run(callable = Processor)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="55">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    RabbitMQSubscriber.new(callable, **config).run</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="56">
           
           
+          <code class="ruby">  # url to connect to the RabbitMQ Server</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="57">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  config_accessor(:url, instance_accessor: false)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="58">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="59">
+          
+          
+          <code class="ruby">  # heartbeat: heartbeat for the connection. Defaults to nil.</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="60">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  config_accessor(:heartbeat, instance_accessor: false)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="61">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="62">
+          
+          
+          <code class="ruby">  # on_error: callable object that handles errors during processing the</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="63">
+          
+          
+          <code class="ruby">  #       message.</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="64">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  config_accessor(:on_error, instance_accessor: false) do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="65">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    ErrorHandler::LogErrorHandler</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="66">
+          
+          
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="57">
+        <li class="never" data-hits="" data-linenumber="67">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="68">
+          
+          
+          <code class="ruby">  # Instruct the subscriber to keep the subscriber alive even if the</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="69">
+          
+          
+          <code class="ruby">  # queue is empty.</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="70">
+          
+          
+          <code class="ruby">  # Default: true</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="71">
+          <span class="hits">2</span>
+          
+          <code class="ruby">  config_accessor(:subscriber_keep_alive, instance_accessor: false) { false }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="72">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="73">
+          <span class="hits">2</span>
+          
+          <code class="ruby">  config_accessor(:handler_params, instance_accessor: false) { {} }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="74">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="75">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def self.run</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="76">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    subscriber = RabbitMQSubscriber.new(**config)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="77">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    subscriber.run</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="78">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="79">
           
           
           <code class="ruby">end</code>
@@ -502,8 +654,8 @@
     <h3>lib/context_request_subscriber/error_handler.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>11</b> relevant lines. 
-      <span class="green"><b>11</b> lines covered</span> and
+      <b>12</b> relevant lines. 
+      <span class="green"><b>12</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -553,8 +705,8 @@
           <code class="ruby">      def initialize(logger = nil)</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="8">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="7" data-linenumber="8">
+          <span class="hits">7</span>
           
           <code class="ruby">        @logger = (logger || ContextRequestSubscriber.logger)</code>
         </li>
@@ -577,8 +729,8 @@
           <code class="ruby">      def call(error, _info, _properties, _payload)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="12">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="12">
+          <span class="hits">3</span>
           
           <code class="ruby">        @logger.error(&quot;Error recieved during processing the message. \</code>
         </li>
@@ -589,73 +741,339 @@
           <code class="ruby">Error #{error}.&quot;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="14">
+        <li class="covered" data-hits="3" data-linenumber="14">
+          <span class="hits">3</span>
           
-          
-          <code class="ruby">      end</code>
+          <code class="ruby">        @logger.error(error.backtrace.join(&quot;\n&quot;)) if error.backtrace</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="15">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">      end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="16">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="17">
           
           
-          <code class="ruby">    # :nodoc:</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="18">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="18">
           
-          <code class="ruby">    class LogAndRaiseErrorHandler &lt; LogErrorHandler</code>
+          
+          <code class="ruby">    # :nodoc:</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="19">
           <span class="hits">1</span>
           
-          <code class="ruby">      def call(error, info, properties, payload)</code>
+          <code class="ruby">    class LogAndRaiseErrorHandler &lt; LogErrorHandler</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="20">
           <span class="hits">1</span>
           
+          <code class="ruby">      def call(error, info, properties, payload)</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="21">
+          <span class="hits">2</span>
+          
           <code class="ruby">        super(error, info, properties, payload)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="21">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="22">
+          <span class="hits">2</span>
           
           <code class="ruby">        raise error</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="22">
-          
-          
-          <code class="ruby">      end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="23">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">      end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="24">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="25">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="26">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="b139ea9264c7be2845d46a9f9206ddc195125eb3">
+  <div class="header">
+    <h3>lib/context_request_subscriber/handler.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>2</b> relevant lines. 
+      <span class="green"><b>2</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="never" data-hits="" data-linenumber="1">
+          
+          
+          <code class="ruby"># frozen_string_literal: true</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require &#39;context_request_subscriber/handler/json_api_handler&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="4">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
+          
+          
+          <code class="ruby"># :nodoc:</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
+          
+          <code class="ruby">module Handler</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="7">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="361934a674e809623b7d586a7b02b1baf7536bfd">
+  <div class="header">
+    <h3>lib/context_request_subscriber/handler/json_api_handler.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>14</b> relevant lines. 
+      <span class="green"><b>14</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="never" data-hits="" data-linenumber="1">
+          
+          
+          <code class="ruby"># frozen_string_literal: true</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require &#39;json_api_client&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="4">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="5">
+          <span class="hits">1</span>
+          
+          <code class="ruby">module ContextRequestSubscriber</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  module Handler</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="7">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    module JsonApiHandler</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="8">
+          
+          
+          <code class="ruby">      # :nodoc:</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="9">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      class Base &lt; JsonApiClient::Resource</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="10">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        def initialize(params, **keys)</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="11">
+          <span class="hits">2</span>
+          
+          <code class="ruby">          @headers = keys.fetch(:handler_headers, {})</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="12">
+          <span class="hits">2</span>
+          
+          <code class="ruby">          self.class.site = keys.fetch(:site, nil)</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="13">
+          <span class="hits">2</span>
+          
+          <code class="ruby">          super(params)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="14">
+          
+          
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="15">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="16">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        def call</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="17">
+          <span class="hits">1</span>
+          
+          <code class="ruby">          self.class.with_headers(@headers) do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="18">
+          <span class="hits">1</span>
+          
+          <code class="ruby">            save</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="19">
+          
+          
+          <code class="ruby">          end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="20">
+          
+          
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="21">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="22">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="23">
+          
+          
+          <code class="ruby">      # :nodoc:</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="24">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      class Context &lt; Base; end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="25">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="26">
+          
+          
+          <code class="ruby">      # :nodoc:</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="27">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      class Request &lt; Base; end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="28">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="29">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="30">
           
           
           <code class="ruby">end</code>
@@ -671,8 +1089,8 @@
     <h3>lib/context_request_subscriber/processor.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>20</b> relevant lines. 
-      <span class="green"><b>20</b> lines covered</span> and
+      <b>28</b> relevant lines. 
+      <span class="green"><b>28</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -734,64 +1152,64 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="10">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="10">
           
-          <code class="ruby">    extend self</code>
+          
+          <code class="ruby">    # Class to execute the processing of the messages.</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="11">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    # Base on the message_type a processor is instantiated and provides</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="12">
+        <li class="never" data-hits="" data-linenumber="12">
+          
+          
+          <code class="ruby">    # processing.</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="13">
           <span class="hits">1</span>
           
-          <code class="ruby">    def run(_delivery_info, properties, payload)</code>
+          <code class="ruby">    class Executor</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="13">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="1" data-linenumber="14">
+          <span class="hits">1</span>
           
-          <code class="ruby">      payload = JSON.parse(payload)</code>
-        </li>
-      
-        <li class="covered" data-hits="4" data-linenumber="14">
-          <span class="hits">4</span>
-          
-          <code class="ruby">      process(properties[:type], properties[:headers]&amp;.dig(&#39;version&#39;), payload)</code>
+          <code class="ruby">      attr_accessor :handler_params</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="15">
           
           
-          <code class="ruby">    rescue JSON::ParserError</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="16">
           <span class="hits">1</span>
           
-          <code class="ruby">      ContextRequestSubscriber.logger.error(&quot;Could not parse message payload \</code>
+          <code class="ruby">      def initialize(logger, **keys)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="17">
+        <li class="covered" data-hits="8" data-linenumber="17">
+          <span class="hits">8</span>
           
-          
-          <code class="ruby">with payload #{payload}. Ignoring.&quot;)</code>
+          <code class="ruby">        @logger = logger</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="18">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="8" data-linenumber="18">
+          <span class="hits">8</span>
           
-          <code class="ruby">      nil</code>
+          <code class="ruby">        @handler_params = keys[:handler_params] || {}</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="19">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">      end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="20">
@@ -803,112 +1221,232 @@
         <li class="covered" data-hits="1" data-linenumber="21">
           <span class="hits">1</span>
           
-          <code class="ruby">    def process(name, version = nil, payload = {})</code>
+          <code class="ruby">      def run(_delivery_info, properties, payload)</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="22">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="8" data-linenumber="22">
+          <span class="hits">8</span>
           
-          <code class="ruby">      processor = processor_class(name, version)&amp;.new</code>
+          <code class="ruby">        @logger.debug(&quot;#{properties[:type]} processing message.&quot;)</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="23">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="8" data-linenumber="23">
+          <span class="hits">8</span>
           
-          <code class="ruby">      if processor</code>
+          <code class="ruby">        @logger.debug(&quot;   payload: #{payload}&quot;)</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="24">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="8" data-linenumber="24">
+          <span class="hits">8</span>
           
-          <code class="ruby">        processor.call(payload)</code>
+          <code class="ruby">        @logger.debug(&quot;   properties: #{properties}&quot;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="25">
+        <li class="covered" data-hits="8" data-linenumber="25">
+          <span class="hits">8</span>
           
-          
-          <code class="ruby">      else</code>
+          <code class="ruby">        payload = JSON.parse(payload)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="26">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="7" data-linenumber="26">
+          <span class="hits">7</span>
           
-          <code class="ruby">        ContextRequestSubscriber.logger.error(&quot;Invalid processor type or \</code>
+          <code class="ruby">        process(properties[:type], properties[:headers]&amp;.dig(&#39;version&#39;),</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="27">
           
           
-          <code class="ruby">processor type with name #{name} cannot be found&quot;)</code>
+          <code class="ruby">                payload)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="28">
           
           
-          <code class="ruby">      end</code>
+          <code class="ruby">      rescue JSON::ParserError</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="29">
+        <li class="covered" data-hits="1" data-linenumber="29">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">    end</code>
+          <code class="ruby">        @logger.error(&quot;Could not parse message payload \</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="30">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">with payload #{payload}. Ignoring.&quot;)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="31">
           <span class="hits">1</span>
           
-          <code class="ruby">    def processor_class(name, version = nil)</code>
+          <code class="ruby">        nil</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="32">
-          <span class="hits">4</span>
+        <li class="never" data-hits="" data-linenumber="32">
           
-          <code class="ruby">      version = &quot;V#{version}&quot; if version</code>
+          
+          <code class="ruby">      end</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="33">
-          <span class="hits">4</span>
+        <li class="never" data-hits="" data-linenumber="33">
           
-          <code class="ruby">      [self.name, version, name.tr(&#39;.&#39;, &#39;_&#39;).camelize].compact.join(&#39;::&#39;)</code>
+          
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="34">
-          
-          
-          <code class="ruby">                                                      .constantize</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="35">
-          
-          
-          <code class="ruby">    rescue NameError</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="36">
+        <li class="covered" data-hits="1" data-linenumber="34">
           <span class="hits">1</span>
           
-          <code class="ruby">      nil</code>
+          <code class="ruby">      def process(name, version = nil, payload = {})</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="37">
+        <li class="covered" data-hits="7" data-linenumber="35">
+          <span class="hits">7</span>
+          
+          <code class="ruby">        processor = Processor.processor_class(name, version)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="36">
+          
+          
+          <code class="ruby">          &amp;.new(@logger, handler_params: handler_params)</code>
+        </li>
+      
+        <li class="covered" data-hits="7" data-linenumber="37">
+          <span class="hits">7</span>
+          
+          <code class="ruby">        if processor</code>
+        </li>
+      
+        <li class="covered" data-hits="6" data-linenumber="38">
+          <span class="hits">6</span>
+          
+          <code class="ruby">          processor.call(payload)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="39">
+          
+          
+          <code class="ruby">        else</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="40">
+          <span class="hits">1</span>
+          
+          <code class="ruby">          @logger.error(&quot;Invalid processor type or \</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="41">
+          
+          
+          <code class="ruby">processor type with name #{name} cannot be found&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="42">
+          
+          
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="43">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="44">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="45">
+          
+          
+          <code class="ruby">      # Method can be overwriten to communicate with the MQ and ack the message</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="46">
+          
+          
+          <code class="ruby">      # if processing was successful.</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="47">
+          
+          
+          <code class="ruby">      # Default is to do nothing because the setup is auto_ack.</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="48">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      def ack(_channel); end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="49">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="38">
+        <li class="never" data-hits="" data-linenumber="50">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="51">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def self.processor_class(name, version = nil)</code>
+        </li>
+      
+        <li class="covered" data-hits="7" data-linenumber="52">
+          <span class="hits">7</span>
+          
+          <code class="ruby">      version = &quot;V#{version}&quot; if version</code>
+        </li>
+      
+        <li class="covered" data-hits="7" data-linenumber="53">
+          <span class="hits">7</span>
+          
+          <code class="ruby">      [self.name, version, name.tr(&#39;.&#39;, &#39;_&#39;).camelize].compact.join(&#39;::&#39;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="54">
+          
+          
+          <code class="ruby">                                                      .constantize</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="55">
+          
+          
+          <code class="ruby">    rescue NameError</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="56">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      nil</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="57">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="58">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="39">
+        <li class="never" data-hits="" data-linenumber="59">
           
           
           <code class="ruby">end</code>
@@ -924,8 +1462,8 @@
     <h3>lib/context_request_subscriber/processor/base.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>10</b> relevant lines. 
-      <span class="green"><b>10</b> lines covered</span> and
+      <b>13</b> relevant lines. 
+      <span class="green"><b>13</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -972,100 +1510,130 @@
         <li class="covered" data-hits="1" data-linenumber="7">
           <span class="hits">1</span>
           
-          <code class="ruby">      def call(payload)</code>
+          <code class="ruby">      def initialize(logger, **keys)</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="8">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="8" data-linenumber="8">
+          <span class="hits">8</span>
           
-          <code class="ruby">        if (handler = ContextRequestSubscriber.handlers[type_name])</code>
+          <code class="ruby">        @logger = logger</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="9">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="8" data-linenumber="9">
+          <span class="hits">8</span>
           
-          <code class="ruby">          handler.new(payload).call</code>
+          <code class="ruby">        @handler_params = keys[:handler_params] || {}</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="10">
           
           
-          <code class="ruby">        else</code>
+          <code class="ruby">      end</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="11">
+        <li class="never" data-hits="" data-linenumber="11">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="12">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      def call(payload)</code>
+        </li>
+      
+        <li class="covered" data-hits="7" data-linenumber="13">
+          <span class="hits">7</span>
+          
+          <code class="ruby">        if (handler = ContextRequestSubscriber.handlers[type_name])</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="14">
           <span class="hits">2</span>
           
-          <code class="ruby">          ContextRequestSubscriber.logger.error(&quot;Could not find handler for \</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="12">
-          
-          
-          <code class="ruby">message type #{type_name}&quot;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="13">
-          
-          
-          <code class="ruby">        end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="14">
-          
-          
-          <code class="ruby">      end</code>
+          <code class="ruby">          handler.new(payload, **@handler_params).call</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="15">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">        else</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="16">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="5" data-linenumber="16">
+          <span class="hits">5</span>
           
-          <code class="ruby">      private</code>
+          <code class="ruby">          @logger.error(&quot;Could not find handler for \</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="17">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">message type #{type_name}&quot;)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="18">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="18">
           
-          <code class="ruby">      def type_name</code>
-        </li>
-      
-        <li class="covered" data-hits="6" data-linenumber="19">
-          <span class="hits">6</span>
           
-          <code class="ruby">        self.class.name.split(&#39;::&#39;).last.underscore.downcase.to_sym</code>
+          <code class="ruby">        end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="20">
+        <li class="never" data-hits="" data-linenumber="19">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="21">
+        <li class="never" data-hits="" data-linenumber="20">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="21">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      private</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="22">
           
           
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="23">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      def type_name</code>
+        </li>
+      
+        <li class="covered" data-hits="12" data-linenumber="24">
+          <span class="hits">12</span>
+          
+          <code class="ruby">        self.class.name.split(&#39;::&#39;).last.underscore.downcase.to_sym</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="25">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="26">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="27">
+          
+          
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="23">
+        <li class="never" data-hits="" data-linenumber="28">
           
           
           <code class="ruby">end</code>
@@ -1215,8 +1783,8 @@
     <h3>lib/context_request_subscriber/rabbitmq_subscriber.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>42</b> relevant lines. 
-      <span class="green"><b>42</b> lines covered</span> and
+      <b>63</b> relevant lines. 
+      <span class="green"><b>63</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -1332,280 +1900,280 @@
           <code class="ruby">  class RabbitMQSubscriber</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="19">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    class ExchangeNotFound &lt; StandardError; end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="20">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="21">
+        <li class="never" data-hits="" data-linenumber="19">
           
           
           <code class="ruby">    DEFAULT_QUEUE_OPTS = {</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="22">
+        <li class="covered" data-hits="1" data-linenumber="20">
           <span class="hits">1</span>
           
-          <code class="ruby">      exclusive: false,</code>
+          <code class="ruby">      exclusive: false, durable: true</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="23">
-          
-          
-          <code class="ruby">      durable: true</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="24">
+        <li class="never" data-hits="" data-linenumber="21">
           
           
           <code class="ruby">    }.freeze</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="25">
+        <li class="never" data-hits="" data-linenumber="22">
           
           
           <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="23">
+          
+          
+          <code class="ruby">    DEFAULT_SESSION_PARAMS = {</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="24">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      threaded: true, automatically_recover: true</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="25">
+          
+          
+          <code class="ruby">    }.freeze</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="26">
           
           
-          <code class="ruby">    # @processor the processor to be used to handle the data.</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="27">
           
           
-          <code class="ruby">    # @config the configurables supported as follows</code>
+          <code class="ruby">    # @processor the processor to be used to handle the data.</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="28">
           
           
-          <code class="ruby">    #    session_params: set of session params</code>
+          <code class="ruby">    # @config the configurables supported as follows</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="29">
           
           
-          <code class="ruby">    #    url: url to connect to the RabbitMQ Server</code>
+          <code class="ruby">    #    session_params: set of session params</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="30">
           
           
-          <code class="ruby">    #    heartbeat: heartbeat for the connection. Defaults to nil.</code>
+          <code class="ruby">    #    url: url to connect to the RabbitMQ Server</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="31">
           
           
-          <code class="ruby">    #    exchange_name: the exchange connected to the queue</code>
+          <code class="ruby">    #    heartbeat: heartbeat for the connection. Defaults to nil.</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="32">
           
           
-          <code class="ruby">    #    queue_name: the queue where the data is received from.</code>
+          <code class="ruby">    #    exchange_name: the exchange connected to the queue</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="33">
           
           
-          <code class="ruby">    #    queue_durable: if the queue is durable. Default: true</code>
+          <code class="ruby">    #    exchange_options: the options used to create the exchange if not</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="34">
           
           
-          <code class="ruby">    #    queue_auto_delete: if the queue gets autodeleted.</code>
+          <code class="ruby">    #      existing.</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="35">
           
           
-          <code class="ruby">    #    queue_exclusive: default false.</code>
+          <code class="ruby">    #    exchange_type: type of the exchange, defaults to topic.</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="36">
           
           
-          <code class="ruby">    #    routing_key: the routing_key used. Default nil.</code>
+          <code class="ruby">    #    queue_name: the queue where the data is received from.</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="37">
           
           
-          <code class="ruby">    #    on_error: callable object that handles errors during processing the</code>
+          <code class="ruby">    #    queue_durable: if the queue is durable. Default: true</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="38">
           
           
+          <code class="ruby">    #    queue_auto_delete: if the queue gets autodeleted.</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="39">
+          
+          
+          <code class="ruby">    #    queue_exclusive: default false.</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="40">
+          
+          
+          <code class="ruby">    #    routing_key: the routing_key used. Default nil.</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="41">
+          
+          
+          <code class="ruby">    #    on_error: callable object that handles errors during processing the</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="42">
+          
+          
           <code class="ruby">    #       message.</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="39">
+        <li class="covered" data-hits="1" data-linenumber="43">
           <span class="hits">1</span>
           
-          <code class="ruby">    def initialize(processor, **config)</code>
+          <code class="ruby">    def initialize(**config)</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="40">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="5" data-linenumber="44">
+          <span class="hits">5</span>
           
-          <code class="ruby">      @exchange_name = config[:exchange_name]</code>
+          <code class="ruby">      @error_handler = config[:on_error].new(config[:logger])</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="41">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="5" data-linenumber="45">
+          <span class="hits">5</span>
           
-          <code class="ruby">      @queue_name = config[:queue_name]</code>
+          <code class="ruby">      @logger = config[:logger]</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="42">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="5" data-linenumber="46">
+          <span class="hits">5</span>
           
-          <code class="ruby">      @queue_bindings = config[:routing_key]</code>
-        </li>
-      
-        <li class="covered" data-hits="4" data-linenumber="43">
-          <span class="hits">4</span>
-          
-          <code class="ruby">      @processor = processor</code>
-        </li>
-      
-        <li class="covered" data-hits="4" data-linenumber="44">
-          <span class="hits">4</span>
-          
-          <code class="ruby">      @queue_opts = queue_opts(config)</code>
-        </li>
-      
-        <li class="covered" data-hits="4" data-linenumber="45">
-          <span class="hits">4</span>
-          
-          <code class="ruby">      @session_params = config.fetch(:session_params, {})</code>
-        </li>
-      
-        <li class="covered" data-hits="4" data-linenumber="46">
-          <span class="hits">4</span>
-          
-          <code class="ruby">      @url = config[:url]</code>
+          <code class="ruby">      @executor = Processor::Executor.new(config[:logger],</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="47">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">                                          config.slice(:handler_params))</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="48">
+        <li class="covered" data-hits="5" data-linenumber="48">
+          <span class="hits">5</span>
+          
+          <code class="ruby">      config_connection(config)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="49">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="49">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="5" data-linenumber="50">
+          <span class="hits">5</span>
           
-          <code class="ruby">    def run</code>
+          <code class="ruby">      config_exchange(config)</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="50">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="5" data-linenumber="51">
+          <span class="hits">5</span>
           
-          <code class="ruby">      channel = create_channel</code>
+          <code class="ruby">      config_queue(config)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="51">
-          <span class="hits">2</span>
+        <li class="never" data-hits="" data-linenumber="52">
           
-          <code class="ruby">      queue = bind_queue</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="52">
-          <span class="hits">2</span>
           
-          <code class="ruby">      @consumer = queue.subscribe(manual_ack: true,</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="53">
           
           
-          <code class="ruby">                                  block: false) do |info, properties, payload|</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="54">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="1" data-linenumber="54">
+          <span class="hits">1</span>
           
-          <code class="ruby">        run_ack(channel, info, properties, payload)</code>
+          <code class="ruby">    def run</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="55">
+        <li class="covered" data-hits="5" data-linenumber="55">
+          <span class="hits">5</span>
           
-          
-          <code class="ruby">      end</code>
+          <code class="ruby">      exchange, queue = setup_queue</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="56">
+        <li class="covered" data-hits="5" data-linenumber="56">
+          <span class="hits">5</span>
           
-          
-          <code class="ruby">    end</code>
+          <code class="ruby">      @consumer = queue.subscribe(manual_ack: true,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="57">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">                                  block: false) do |info, properties, payload|</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="58">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="5" data-linenumber="58">
+          <span class="hits">5</span>
           
-          <code class="ruby">    private</code>
+          <code class="ruby">        consume(info, properties, payload)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="59">
           
           
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="60">
+          <span class="hits">4</span>
+          
+          <code class="ruby">      join(exchange)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="61">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="62">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="60">
+        <li class="covered" data-hits="1" data-linenumber="63">
           <span class="hits">1</span>
           
-          <code class="ruby">    def run_ack(channel, info, properties, payload)</code>
+          <code class="ruby">    def join(exchange)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="61">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="4" data-linenumber="64">
+          <span class="hits">4</span>
           
-          <code class="ruby">      Processor.run(info, properties, payload)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="62">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      channel.ack(info.delivery_tag)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="63">
-          
-          
-          <code class="ruby">    rescue StandardError =&gt; e</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="64">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      handle_error(e, info, properties, payload)</code>
+          <code class="ruby">      @join_workpool &amp;&amp; exchange.channel.work_pool.join</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="65">
@@ -1623,121 +2191,121 @@
         <li class="covered" data-hits="1" data-linenumber="67">
           <span class="hits">1</span>
           
-          <code class="ruby">    def create_channel(options = {})</code>
+          <code class="ruby">    private</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="68">
-          <span class="hits">4</span>
-          
-          <code class="ruby">      @bunny = Bunny.new(@url, options)</code>
-        </li>
-      
-        <li class="covered" data-hits="4" data-linenumber="69">
-          <span class="hits">4</span>
-          
-          <code class="ruby">      @bunny.start</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="70">
+        <li class="never" data-hits="" data-linenumber="68">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="71">
-          <span class="hits">4</span>
-          
-          <code class="ruby">      @channel = @bunny.create_channel</code>
-        </li>
-      
-        <li class="covered" data-hits="4" data-linenumber="72">
-          <span class="hits">4</span>
-          
-          <code class="ruby">      @channel.confirm_select</code>
-        </li>
-      
-        <li class="covered" data-hits="4" data-linenumber="73">
-          <span class="hits">4</span>
-          
-          <code class="ruby">      @exchange = @channel.exchanges.fetch(@exchange_name) do</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="74">
-          <span class="hits">2</span>
-          
-          <code class="ruby">        raise ExchangeNotFound, @exchange_name</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="75">
-          
-          
-          <code class="ruby">      end</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="76">
-          <span class="hits">2</span>
-          
-          <code class="ruby">      @exchange.channel</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="77">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="78">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="79">
+        <li class="covered" data-hits="1" data-linenumber="69">
           <span class="hits">1</span>
           
-          <code class="ruby">    def bind_queue</code>
+          <code class="ruby">    def config_connection(config)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="80">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="5" data-linenumber="70">
+          <span class="hits">5</span>
           
-          <code class="ruby">      queue = @channel.queue(@queue_name, @queue_opts)</code>
+          <code class="ruby">      @session_params = config.fetch(:session_params, {})</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="81">
-          <span class="hits">2</span>
+        <li class="never" data-hits="" data-linenumber="71">
           
-          <code class="ruby">      queue.bind(@exchange, @queue_bindings)</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="82">
-          <span class="hits">2</span>
           
-          <code class="ruby">      queue</code>
+          <code class="ruby">                              .merge(DEFAULT_SESSION_PARAMS)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="83">
+        <li class="covered" data-hits="5" data-linenumber="72">
+          <span class="hits">5</span>
+          
+          <code class="ruby">      @url = config[:url]</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="73">
           
           
           <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="74">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="75">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def config_queue(config)</code>
+        </li>
+      
+        <li class="covered" data-hits="5" data-linenumber="76">
+          <span class="hits">5</span>
+          
+          <code class="ruby">      @queue_name = config[:queue_name]</code>
+        </li>
+      
+        <li class="covered" data-hits="5" data-linenumber="77">
+          <span class="hits">5</span>
+          
+          <code class="ruby">      @queue_bindings = config.slice(:routing_key)</code>
+        </li>
+      
+        <li class="covered" data-hits="5" data-linenumber="78">
+          <span class="hits">5</span>
+          
+          <code class="ruby">      @queue_opts = queue_opts(config)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="79">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="80">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="81">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def config_exchange(config)</code>
+        </li>
+      
+        <li class="covered" data-hits="5" data-linenumber="82">
+          <span class="hits">5</span>
+          
+          <code class="ruby">      @exchange_type = config.fetch(:exchange_type, &#39;topic&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="5" data-linenumber="83">
+          <span class="hits">5</span>
+          
+          <code class="ruby">      @exchange_name = config.fetch(:exchange_name,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="84">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">                                    ContextRequestSubscriber.exchange_name)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="85">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="5" data-linenumber="85">
+          <span class="hits">5</span>
           
-          <code class="ruby">    def handle_error(error, info, properties, payload)</code>
+          <code class="ruby">      @exchange_opts = config.fetch(:exchange_options, {})</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="86">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="5" data-linenumber="86">
+          <span class="hits">5</span>
           
-          <code class="ruby">      @error_handler.call(error, info, properties, payload) if error_handler</code>
+          <code class="ruby">      @join_workpool = config.fetch(:subscriber_join, true)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="87">
@@ -1752,55 +2320,385 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="89">
+        <li class="never" data-hits="" data-linenumber="89">
+          
+          
+          <code class="ruby">    # setup the whole message queue settings and return the queue object.</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="90">
+          
+          
+          <code class="ruby">    # Can be overwriten by ContextRequestMiddleware.fetch_exchange_callback</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="91">
           <span class="hits">1</span>
           
-          <code class="ruby">    def queue_opts(config)</code>
+          <code class="ruby">    def setup_queue</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="90">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="5" data-linenumber="92">
+          <span class="hits">5</span>
           
-          <code class="ruby">      opts = config.slice(:queue_durable, :queue_auto_delete, :queue_exclusive)</code>
+          <code class="ruby">      callback = ContextRequestSubscriber.fetch_queue_callback</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="91">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="5" data-linenumber="93">
+          <span class="hits">5</span>
           
-          <code class="ruby">      opts.dup.each do |k, _v|</code>
+          <code class="ruby">      if callback</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="92">
+        <li class="covered" data-hits="1" data-linenumber="94">
           <span class="hits">1</span>
           
-          <code class="ruby">        opts[k.to_s.sub(/^queue_/, &#39;&#39;).to_sym] = opts.delete(k)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="93">
-          
-          
-          <code class="ruby">      end</code>
-        </li>
-      
-        <li class="covered" data-hits="4" data-linenumber="94">
-          <span class="hits">4</span>
-          
-          <code class="ruby">      DEFAULT_QUEUE_OPTS.merge(opts)</code>
+          <code class="ruby">        exchange, queue = callback.call(self)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="95">
           
           
+          <code class="ruby">      else</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="96">
+          <span class="hits">4</span>
+          
+          <code class="ruby">        channel = create_channel(@session_params)</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="97">
+          <span class="hits">4</span>
+          
+          <code class="ruby">        exchange = fetch_exchange(channel, @exchange_type, @exchange_name,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="98">
+          
+          
+          <code class="ruby">                                  @exchange_opts)</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="99">
+          <span class="hits">4</span>
+          
+          <code class="ruby">        queue = bind_queue(channel, exchange)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="100">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="covered" data-hits="5" data-linenumber="101">
+          <span class="hits">5</span>
+          
+          <code class="ruby">      [exchange, queue]</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="102">
+          
+          
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="96">
+        <li class="never" data-hits="" data-linenumber="103">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="104">
+          
+          
+          <code class="ruby">    # Default behaviour is that all messages are consumed by just</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="105">
+          
+          
+          <code class="ruby">    # passing the information to the processor. If any part fails</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="106">
+          
+          
+          <code class="ruby">    # the application needs to gracefully handle because the message</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="107">
+          
+          
+          <code class="ruby">    # is acked automatically.</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="108">
+          
+          
+          <code class="ruby">    # To change that behaviour overwrite the fetch_queue_callback</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="109">
+          
+          
+          <code class="ruby">    # and extend the Processor to handle the ack method.</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="110">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def consume(info, properties, payload)</code>
+        </li>
+      
+        <li class="covered" data-hits="5" data-linenumber="111">
+          <span class="hits">5</span>
+          
+          <code class="ruby">      @executor.run(info, properties, payload)</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="112">
+          <span class="hits">4</span>
+          
+          <code class="ruby">      @executor.ack(@channel)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="113">
+          
+          
+          <code class="ruby">    rescue StandardError =&gt; e</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="114">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      handle_error(e, info, properties, payload)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="115">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="116">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="117">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def create_channel(options = {})</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="118">
+          <span class="hits">4</span>
+          
+          <code class="ruby">      connection = Bunny.new(@url, options)</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="119">
+          <span class="hits">4</span>
+          
+          <code class="ruby">      connection.start</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="120">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="121">
+          <span class="hits">4</span>
+          
+          <code class="ruby">      connection.create_channel</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="122">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="123">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="124">
+          
+          
+          <code class="ruby">    # return the exchange Bunny object and do the whole setup around it.</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="125">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def fetch_exchange(channel, exchange_type, exchange_name, exchange_opts)</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="126">
+          <span class="hits">4</span>
+          
+          <code class="ruby">      channel.exchanges[exchange_name] ||</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="127">
+          
+          
+          <code class="ruby">        bunny_exchange(channel, exchange_type, exchange_name, exchange_opts)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="128">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="129">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="130">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def bind_queue(channel, exchange)</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="131">
+          <span class="hits">4</span>
+          
+          <code class="ruby">      queue = channel.queue(@queue_name, @queue_opts)</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="132">
+          <span class="hits">4</span>
+          
+          <code class="ruby">      queue.bind(exchange, @queue_bindings)</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="133">
+          <span class="hits">4</span>
+          
+          <code class="ruby">      queue</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="134">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="135">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="136">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def handle_error(error, info, properties, payload)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="137">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      @error_handler&amp;.call(error, info, properties, payload)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="138">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="139">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="140">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def bunny_exchange(channel, type, name, opts)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="141">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      Bunny::Exchange.new(channel, type, name, opts)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="142">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="143">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="144">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def queue_opts(config)</code>
+        </li>
+      
+        <li class="covered" data-hits="5" data-linenumber="145">
+          <span class="hits">5</span>
+          
+          <code class="ruby">      opts = config.slice(:queue_durable, :queue_auto_delete, :queue_exclusive)</code>
+        </li>
+      
+        <li class="covered" data-hits="5" data-linenumber="146">
+          <span class="hits">5</span>
+          
+          <code class="ruby">      opts.dup.each do |k, _v|</code>
+        </li>
+      
+        <li class="covered" data-hits="5" data-linenumber="147">
+          <span class="hits">5</span>
+          
+          <code class="ruby">        opts[k.to_s.sub(/^queue_/, &#39;&#39;).to_sym] = opts.delete(k)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="148">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="covered" data-hits="5" data-linenumber="149">
+          <span class="hits">5</span>
+          
+          <code class="ruby">      DEFAULT_QUEUE_OPTS.merge(opts)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="150">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="151">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="97">
+        <li class="never" data-hits="" data-linenumber="152">
           
           
           <code class="ruby">end</code>

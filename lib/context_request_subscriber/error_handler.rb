@@ -11,6 +11,7 @@ module ContextRequestSubscriber
       def call(error, _info, _properties, _payload)
         @logger.error("Error recieved during processing the message. \
 Error #{error}.")
+        @logger.error(error.backtrace.join("\n")) if error.backtrace
       end
     end
 
