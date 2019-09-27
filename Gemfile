@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 source 'https://rubygems.org'
-source 'https://rubygems.fidor.de'
 
 # Declare your gem's dependencies in datamasking.gemspec.
 # Bundler will treat runtime dependencies like base dependencies, and

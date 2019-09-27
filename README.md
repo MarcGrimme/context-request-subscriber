@@ -8,6 +8,19 @@
 
 *ContextRequestTrackingSubscriber* is a Ruby written consumer/subscriber to a queue providing context request messages. The default implementation connects to [RabbitMQ](https://www.rabbitmq.com/) but should be exchangable by overwriting it.
 
+## TODOs
+
+Words of warning:
+
+This software is still in a very early state of development.
+There have to be a lot of further improvements incorporated. Some are:
+
+* extract the RabbitMQ logic (perhaps create a gem and have the subscriber standalone ...)
+* Much better error handling for the JsonApiPushHandler logic
+* Json Schema validation
+* Integration to Kafka instead of RabbitMQ (do we need a subscriber there at all??) or can we stick with the middleware
+* ...
+
 ## What is Context Request Tracking
 
 Every request entering a multi service framework leaves a trail of services it hits. Independently for if they are synchronously or asynchronously triggered. In order to follow a request through an application the well known X_REQUEST_ID http header was introduced to push through all requests and therefore track it through the application.
@@ -33,13 +46,15 @@ A context is the second message supported by this subscriber that basically conn
 
 To uniquely describe a context a *context_id* has to be presented in each context message. Each request message also has to provide a *request_context* which is the same as the *context_id* it relates to (see above). The *app_id* references the application involved (it's not really yet clear if the app_id belongs to the context or the request).
 
-## Other components
-
-### ContextRequestMiddleware
+## ContextRequestMiddleware
 
 To provide these messages from a Rails application look at [ContextRequestMiddleware](https://github.com/MarcGrimme/context-request-middleware)
 
 ## Configuration
+
+The file [config/environment.rb](config/environment.rb) describes the different settings to be configured.
+
+The following environment variables mainly to configure RabbitMQ are supported.
 
 ## Installation
 
@@ -49,6 +64,12 @@ gem 'context-request-subscriber'
 ```
 
 ## Usage
+
+To start the subscriber issue
+
+```
+./bin/subscriber
+```
 
 ## Development
 
