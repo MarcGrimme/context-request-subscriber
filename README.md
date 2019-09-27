@@ -2,7 +2,7 @@
 
 [![Gem Version](https://badge.fury.io/rb/context-request-subscriber.svg)](https://badge.fury.io/rb/context-request-subscriber)
 [![Build Status](https://api.travis-ci.org/MarcGrimme/context-request-subscriber.svg?branch=master)](https://secure.travis-ci.org/MarcGrimme/context-request-subscriber)
-[![Depfu](https://badges.depfu.com/badges/48a6c1c7c649f62eede6ffa2be843180/count.svg)](https://depfu.com/github/MarcGrimme/context-request-subscriber?project_id=6900)
+[![Depfu](https://badges.depfu.com/badges/4287422744e2835166219de410c55e52/count.svg)](https://depfu.com/github/MarcGrimme/context-request-middleware?project_id=9487)
 [![Coverage](https://marcgrimme.github.io/context-request-subscriber/badges/coverage_badge_total.svg)](https://marcgrimme.github.io/context-request-subscriber/coverage/index.html)
 [![RubyCritic](https://marcgrimme.github.io/context-request-subscriber/badges/rubycritic_badge_score.svg)](https://marcgrimme.github.io/context-request-subscriber/tmp/rubycritic/overview.html)
 
