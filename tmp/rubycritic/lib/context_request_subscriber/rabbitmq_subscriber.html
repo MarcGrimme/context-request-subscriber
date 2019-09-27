@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ruby Critic - Home</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- StyleSheets -->
+    <link href="../../assets/stylesheets/bootstrap.min.css" media="screen, projection, print" rel="stylesheet" type="text/css">
+    <link href="../../assets/stylesheets/font-awesome.min.css" media="screen, projection, print" rel="stylesheet" type="text/css">
+    <link href="../../assets/stylesheets/prettify.custom_theme.css" media="screen, projection, print" rel="stylesheet" type="text/css">
+    <link href="../../assets/stylesheets/application.css" media="screen, projection, print" rel="stylesheet" type="text/css">
+  </head>
+
+  <body>
+    <header class="navbar navbar-default navbar-fixed-top">
+      <a href="#menu-toggle" class="btn btn-default hidden-lg visible-sm-* hidden-md visible-xs-* pull-left" id="menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i></a>
+      <a href="../../overview.html"><img src="../../assets/images/logo.png" alt="Ruby Critic Logo" title="Ruby Critic Logo" width="55"><span class="logo">RUBYCRITIC</span></a>
+      
+    </header>
+    <div id="wrapper">
+      <!-- Sidebar -->
+      <aside id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+          <li class="sidebar-item">
+            <a href="../../overview.html" class="project-nav-item overview-nav"><i class="fa fa-dashboard"></i>Overview</a>
+          </li>
+          <li class="sidebar-item">
+            <a href="../../code_index.html" class="project-nav-item code-index-nav"><i class="fa fa-code"></i>Code</a>
+          </li>
+          <li class="sidebar-item">
+            <a href="../../smells_index.html" class="project-nav-item smells-index-nav"><i class="fa fa-warning"></i>Smells</a>
+          </li>
+        </ul>
+      </aside>
+      <!-- /#sidebar-wrapper -->
+      <div id="page-content-wrapper">
+        <div class="container-fluid">
+          <div class="row">
+  <!--Page Title -->
+  <div class="Page_Title">
+    <div class="file-time">
+      <span class="committed-at">
+        
+          Updated <time class='js-timeago' datetime='2019-09-26 17:20:42 +0200'>2019-09-26 17:20:42 +0200</time>
+        
+      </span>
+    </div>
+    <div>
+      <h3><small>lib/context_request_subscriber /</small> rabbitmq_subscriber.rb</h3>
+    </div>
+  </div>
+  <!--End Page Title -->
+  <div class="Content_Wrapper">
+    <!-- code detail -->
+    <div class="code-top-detail clearfix row">
+      <div class="col-md-8">
+        <div class="row">
+          <div class="col-md-1">
+            <div class="rating b big">
+              B
+            </div>
+          </div>
+          <div class="code-statistics col-md-11">
+            <div class="col-md-3">
+              <div><span class="metric">152</span><small> lines of codes</small></div>
+              <div><span class="metric">14</span><small> methods</small></div>
+            </div>
+            <div class="col-md-3">
+              <div><span class="metric">5.4</span><small> complexity/method</small></div>
+              <div><span class="metric">3</span><small> churn</small></div>
+            </div>
+            <div class="col-md-3">
+              <div><span class="metric">75.58</span><small> complexity</small></div>
+              <div><span class="metric">0</span><small> duplications</small></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="code-tabs">
+          <ul class="nav nav-pills right-to-left">
+            <li><a href="#" id="toggle-code" class="toggle-button button">code</a></li>
+            <li class="active">
+              <a href="#" id="toggle-smells" class="toggle-button button">
+                22
+                smells
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <code class="prettyprint linenums lang-ruby file-code js-file-code"># frozen_string_literal: true
+
+require &#39;bunny&#39;
+
+module ContextRequestSubscriber
+  # The subscriber to attach to the exchange to process the
+  # ContextRequest data.
+  #
+  # ErrorHandler is a Callable object that gets called for any exception
+  # during the execution of the processor.
+  # The call method gets passed the following information:
+  #   @exception the exception caught
+  #   @delivery_info the delivery_info object
+  #   @properties properties passed in the message (headers, ..)
+  #   @payload the payload of the message
+  # The ErrorHandler has to decide what to do with the message. If none
+  # is given the error will be ignored!
+  class RabbitMQSubscriber<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Instance-Variable-Assumption.md" target="_blank"><b>InstanceVariableAssumption</b></a>        </span>      </div>      <span>ContextRequestSubscriber::RabbitMQSubscriber assumes too much for instance variable '@channel'</span>          </div>  </li>  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Instance-Variable-Assumption.md" target="_blank"><b>InstanceVariableAssumption</b></a>        </span>      </div>      <span>ContextRequestSubscriber::RabbitMQSubscriber assumes too much for instance variable '@exchange_name'</span>          </div>  </li>  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Instance-Variable-Assumption.md" target="_blank"><b>InstanceVariableAssumption</b></a>        </span>      </div>      <span>ContextRequestSubscriber::RabbitMQSubscriber assumes too much for instance variable '@exchange_opts'</span>          </div>  </li>  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Instance-Variable-Assumption.md" target="_blank"><b>InstanceVariableAssumption</b></a>        </span>      </div>      <span>ContextRequestSubscriber::RabbitMQSubscriber assumes too much for instance variable '@exchange_type'</span>          </div>  </li>  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Instance-Variable-Assumption.md" target="_blank"><b>InstanceVariableAssumption</b></a>        </span>      </div>      <span>ContextRequestSubscriber::RabbitMQSubscriber assumes too much for instance variable '@join_workpool'</span>          </div>  </li>  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Instance-Variable-Assumption.md" target="_blank"><b>InstanceVariableAssumption</b></a>        </span>      </div>      <span>ContextRequestSubscriber::RabbitMQSubscriber assumes too much for instance variable '@queue_bindings'</span>          </div>  </li>  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Instance-Variable-Assumption.md" target="_blank"><b>InstanceVariableAssumption</b></a>        </span>      </div>      <span>ContextRequestSubscriber::RabbitMQSubscriber assumes too much for instance variable '@queue_name'</span>          </div>  </li>  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Instance-Variable-Assumption.md" target="_blank"><b>InstanceVariableAssumption</b></a>        </span>      </div>      <span>ContextRequestSubscriber::RabbitMQSubscriber assumes too much for instance variable '@queue_opts'</span>          </div>  </li>  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Instance-Variable-Assumption.md" target="_blank"><b>InstanceVariableAssumption</b></a>        </span>      </div>      <span>ContextRequestSubscriber::RabbitMQSubscriber assumes too much for instance variable '@session_params'</span>          </div>  </li>  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Instance-Variable-Assumption.md" target="_blank"><b>InstanceVariableAssumption</b></a>        </span>      </div>      <span>ContextRequestSubscriber::RabbitMQSubscriber assumes too much for instance variable '@url'</span>          </div>  </li>  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Too-Many-Instance-Variables.md" target="_blank"><b>TooManyInstanceVariables</b></a>        </span>      </div>      <span>ContextRequestSubscriber::RabbitMQSubscriber has at least 13 instance variables</span>          </div>  </li></ol>
+    DEFAULT_QUEUE_OPTS = {
+      exclusive: false, durable: true
+    }.freeze
+
+    DEFAULT_SESSION_PARAMS = {
+      threaded: true, automatically_recover: true
+    }.freeze
+
+    # @processor the processor to be used to handle the data.
+    # @config the configurables supported as follows
+    #    session_params: set of session params
+    #    url: url to connect to the RabbitMQ Server
+    #    heartbeat: heartbeat for the connection. Defaults to nil.
+    #    exchange_name: the exchange connected to the queue
+    #    exchange_options: the options used to create the exchange if not
+    #      existing.
+    #    exchange_type: type of the exchange, defaults to topic.
+    #    queue_name: the queue where the data is received from.
+    #    queue_durable: if the queue is durable. Default: true
+    #    queue_auto_delete: if the queue gets autodeleted.
+    #    queue_exclusive: default false.
+    #    routing_key: the routing_key used. Default nil.
+    #    on_error: callable object that handles errors during processing the
+    #       message.
+    def initialize(**config)
+      @error_handler = config[:on_error].new(config[:logger])<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md" target="_blank"><b>DuplicateMethodCall</b></a>        </span>      </div>      <span>ContextRequestSubscriber::RabbitMQSubscriber#initialize calls 'config[:logger]' 3 times</span>              <span>Locations:</span>                  <a href="rabbitmq_subscriber.html#L44" class="js-smell-location">0</a>                  <a href="rabbitmq_subscriber.html#L45" class="js-smell-location">1</a>                  <a href="rabbitmq_subscriber.html#L46" class="js-smell-location">2</a>                  </div>  </li></ol>
+      @logger = config[:logger]<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md" target="_blank"><b>DuplicateMethodCall</b></a>        </span>      </div>      <span>ContextRequestSubscriber::RabbitMQSubscriber#initialize calls 'config[:logger]' 3 times</span>              <span>Locations:</span>                  <a href="rabbitmq_subscriber.html#L44" class="js-smell-location">0</a>                  <a href="rabbitmq_subscriber.html#L45" class="js-smell-location">1</a>                  <a href="rabbitmq_subscriber.html#L46" class="js-smell-location">2</a>                  </div>  </li></ol>
+      @executor = Processor::Executor.new(config[:logger],<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md" target="_blank"><b>DuplicateMethodCall</b></a>        </span>      </div>      <span>ContextRequestSubscriber::RabbitMQSubscriber#initialize calls 'config[:logger]' 3 times</span>              <span>Locations:</span>                  <a href="rabbitmq_subscriber.html#L44" class="js-smell-location">0</a>                  <a href="rabbitmq_subscriber.html#L45" class="js-smell-location">1</a>                  <a href="rabbitmq_subscriber.html#L46" class="js-smell-location">2</a>                  </div>  </li></ol>
+                                          config.slice(:handler_params))
+      config_connection(config)
+
+      config_exchange(config)
+      config_queue(config)
+    end
+
+    def run
+      exchange, queue = setup_queue
+      @consumer = queue.subscribe(manual_ack: true,
+                                  block: false) do |info, properties, payload|
+        consume(info, properties, payload)
+      end
+      join(exchange)
+    end
+
+    def join(exchange)
+      @join_workpool &amp;&amp; exchange.channel.work_pool.join
+    end
+
+    private
+
+    def config_connection(config)
+      @session_params = config.fetch(:session_params, {})
+                              .merge(DEFAULT_SESSION_PARAMS)
+      @url = config[:url]
+    end
+
+    def config_queue(config)
+      @queue_name = config[:queue_name]
+      @queue_bindings = config.slice(:routing_key)
+      @queue_opts = queue_opts(config)
+    end
+
+    def config_exchange(config)
+      @exchange_type = config.fetch(:exchange_type, &#39;topic&#39;)
+      @exchange_name = config.fetch(:exchange_name,
+                                    ContextRequestSubscriber.exchange_name)
+      @exchange_opts = config.fetch(:exchange_options, {})
+      @join_workpool = config.fetch(:subscriber_join, true)
+    end
+
+    # setup the whole message queue settings and return the queue object.
+    # Can be overwriten by ContextRequestMiddleware.fetch_exchange_callback
+    def setup_queue<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Too-Many-Statements.md" target="_blank"><b>TooManyStatements</b></a>        </span>      </div>      <span>ContextRequestSubscriber::RabbitMQSubscriber#setup_queue has approx 6 statements</span>          </div>  </li></ol>
+      callback = ContextRequestSubscriber.fetch_queue_callback
+      if callback
+        exchange, queue = callback.call(self)
+      else
+        channel = create_channel(@session_params)
+        exchange = fetch_exchange(channel, @exchange_type, @exchange_name,
+                                  @exchange_opts)
+        queue = bind_queue(channel, exchange)
+      end
+      [exchange, queue]
+    end
+
+    # Default behaviour is that all messages are consumed by just
+    # passing the information to the processor. If any part fails
+    # the application needs to gracefully handle because the message
+    # is acked automatically.
+    # To change that behaviour overwrite the fetch_queue_callback
+    # and extend the Processor to handle the ack method.
+    def consume(info, properties, payload)
+      @executor.run(info, properties, payload)
+      @executor.ack(@channel)
+    rescue StandardError =&gt; e<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Uncommunicative-Variable-Name.md" target="_blank"><b>UncommunicativeVariableName</b></a>        </span>      </div>      <span>ContextRequestSubscriber::RabbitMQSubscriber#consume has the variable name 'e'</span>          </div>  </li></ol>
+      handle_error(e, info, properties, payload)
+    end
+
+    def create_channel(options = {})
+      connection = Bunny.new(@url, options)
+      connection.start<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Feature-Envy.md" target="_blank"><b>FeatureEnvy</b></a>        </span>      </div>      <span>ContextRequestSubscriber::RabbitMQSubscriber#create_channel refers to 'connection' more than self (maybe move it to another class?)</span>              <span>Locations:</span>                  <a href="rabbitmq_subscriber.html#L119" class="js-smell-location">0</a>                  <a href="rabbitmq_subscriber.html#L121" class="js-smell-location">1</a>                  </div>  </li></ol>
+
+      connection.create_channel<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Feature-Envy.md" target="_blank"><b>FeatureEnvy</b></a>        </span>      </div>      <span>ContextRequestSubscriber::RabbitMQSubscriber#create_channel refers to 'connection' more than self (maybe move it to another class?)</span>              <span>Locations:</span>                  <a href="rabbitmq_subscriber.html#L119" class="js-smell-location">0</a>                  <a href="rabbitmq_subscriber.html#L121" class="js-smell-location">1</a>                  </div>  </li></ol>
+    end
+
+    # return the exchange Bunny object and do the whole setup around it.
+    def fetch_exchange(channel, exchange_type, exchange_name, exchange_opts)<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Long-Parameter-List.md" target="_blank"><b>LongParameterList</b></a>        </span>      </div>      <span>ContextRequestSubscriber::RabbitMQSubscriber#fetch_exchange has 4 parameters</span>          </div>  </li></ol>
+      channel.exchanges[exchange_name] ||
+        bunny_exchange(channel, exchange_type, exchange_name, exchange_opts)
+    end
+
+    def bind_queue(channel, exchange)
+      queue = channel.queue(@queue_name, @queue_opts)
+      queue.bind(exchange, @queue_bindings)
+      queue
+    end
+
+    def handle_error(error, info, properties, payload)<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Long-Parameter-List.md" target="_blank"><b>LongParameterList</b></a>        </span>      </div>      <span>ContextRequestSubscriber::RabbitMQSubscriber#handle_error has 4 parameters</span>          </div>  </li></ol>
+      @error_handler&amp;.call(error, info, properties, payload)<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Nil-Check.md" target="_blank"><b>NilCheck</b></a>        </span>      </div>      <span>ContextRequestSubscriber::RabbitMQSubscriber#handle_error performs a nil-check</span>          </div>  </li></ol>
+    end
+
+    def bunny_exchange(channel, type, name, opts)<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Long-Parameter-List.md" target="_blank"><b>LongParameterList</b></a>        </span>      </div>      <span>ContextRequestSubscriber::RabbitMQSubscriber#bunny_exchange has 4 parameters</span>          </div>  </li>  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Utility-Function.md" target="_blank"><b>UtilityFunction</b></a>        </span>      </div>      <span>ContextRequestSubscriber::RabbitMQSubscriber#bunny_exchange doesn't depend on instance state (maybe move it to another class?)</span>          </div>  </li></ol>
+      Bunny::Exchange.new(channel, type, name, opts)
+    end
+
+    def queue_opts(config)<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Utility-Function.md" target="_blank"><b>UtilityFunction</b></a>        </span>      </div>      <span>ContextRequestSubscriber::RabbitMQSubscriber#queue_opts doesn't depend on instance state (maybe move it to another class?)</span>          </div>  </li></ol>
+      opts = config.slice(:queue_durable, :queue_auto_delete, :queue_exclusive)
+      opts.dup.each do |k, _v|<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Uncommunicative-Variable-Name.md" target="_blank"><b>UncommunicativeVariableName</b></a>        </span>      </div>      <span>ContextRequestSubscriber::RabbitMQSubscriber#queue_opts has the variable name 'k'</span>          </div>  </li></ol>
+        opts[k.to_s.sub(/^queue_/, &#39;&#39;).to_sym] = opts.delete(k)
+      end
+      DEFAULT_QUEUE_OPTS.merge(opts)
+    end
+  end
+end
+</code>
+  </div>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScripts -->
+    <script src='../../assets/javascripts/jquery.min.js'></script>
+    <script src='../../assets/javascripts/jquery.tablesorter.min.js'></script>
+    <script src='../../assets/javascripts/jquery.scrollTo.min.js'></script>
+    <script src='../../assets/javascripts/jquery.timeago.js'></script>
+    <script src='../../assets/javascripts/highcharts.src-4.0.1.js'></script>
+    <script src='../../assets/javascripts/prettify.js'></script>
+    <script src='../../assets/javascripts/bootstrap.min.js'></script>
+    <script src='../../assets/javascripts/application.js'></script>
+    <script src='../../assets/javascripts/jquery.filtertable.min.js'></script>
+  </body>
+</html>
