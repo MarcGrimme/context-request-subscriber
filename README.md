@@ -46,6 +46,10 @@ A context is the second message supported by this subscriber that basically conn
 
 To uniquely describe a context a *context_id* has to be presented in each context message. Each request message also has to provide a *request_context* which is the same as the *context_id* it relates to (see above). The *app_id* references the application involved (it's not really yet clear if the app_id belongs to the context or the request).
 
+## Handlers
+
+The subscriber receive these messages and then has to decide what to do with them. This logic is bundled into the handlers. Each message type can have a different handler configured via the `ContextRequestSubscriber.handlers` configurable. This handler is a hash consisting of keys that map to the message type (*context* or *request*) and a callable object where the constructor is called with the message parameters as a hash. Optionally the constructur can have multiple options to be passed. These are the configurables the come from `ContextRequestSubscriber.handler_params`. 
+
 ## ContextRequestMiddleware
 
 To provide these messages from a Rails application look at [ContextRequestMiddleware](https://github.com/MarcGrimme/context-request-middleware)
@@ -55,6 +59,12 @@ To provide these messages from a Rails application look at [ContextRequestMiddle
 The file [config/environment.rb](config/environment.rb) describes the different settings to be configured.
 
 The following environment variables mainly to configure RabbitMQ are supported.
+
+### Handlers
+
+A hash of handlers handling the payload of the messages.
+
+Default: [ContextRequestSubscriber.handler](lib/context_request_subscriber.rb#L41-L49)
 
 ## Installation
 
