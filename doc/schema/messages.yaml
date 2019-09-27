@@ -1,18 +1,14 @@
-asyncapi: '1.1.0'
+asyncapi: 2.0.0
 info:
   title: LoginHistorySubscriber message format
   version: '1.0'
   description: |
     Schema definition of the messages consumed by the LoginHistorySubscriber
 servers:
-  - url: rabbitmq:5672
+  default:
+    url: 'rabbitmq:5672'
     schema: aqmp
     description: The RabbitMQ server used in our installation
-topics:
-  fos.login_history:
-    oneOf:
-      - $ref: '#/component/messages/request'
-      - $ref: '#/component/messages/context'
 component:
   messages:
     request:
@@ -38,7 +34,7 @@ component:
             type: string
             description: The timestamp the request is initiated
             example: aaa
-          request_method: 
+          request_method:
             type: string
             description: The request method for the request
             example: POST
@@ -49,7 +45,9 @@ component:
           request_params:
             type: string
             description: The parameters passed to the request as json string
-            example: { "param1": "value1", "param2": "value2" }
+            example:
+              param1: value1
+              param2: value2
           request_status:
             type: string
             description: the status code responded with from the application
@@ -72,24 +70,41 @@ component:
         properties:
           message_type:
             type: string
-            description: This is a message that creates a context identified by context_id. A context is only related to an owner but neither to a app nor to a host.
+            description: >-
+              This is a message that creates a context identified by context_id.
+              A context is only related to an owner but neither to a app nor to
+              a host.
             default: login_history.context
       payload:
         type: object
         properties:
           context_id:
             type: string
-            description: The unique id specifying the context. Could be a session id, an api token, .. Connects request and context (see request_context).
+            description: >-
+              The unique id specifying the context. Could be a session id, an
+              api token, .. Connects request and context (see request_context).
             example: 26778f009543a0d8f20347e82a3a7b63
           owner_id:
             type: string
-            description: The owner id that has created the context. Most often this will be the user.
+            description: >-
+              The owner id that has created the context. Most often this will be
+              the user.
             example: 42235314-27aa-4b50-9793-2a7b6acfde52
           context_status:
             type: string
-            description: descriptive status of the context. Could be active, enabled, disabled, ..
+            description: >-
+              descriptive status of the context. Could be active, enabled,
+              disabled, ..
             default: active
           context_type:
             type: string
-            description: descriptive type of the context. This could be for example api-token, session, ..
+            description: >-
+              descriptive type of the context. This could be for example
+              api-token, session, ..
             default: session
+channels:
+  fos/login_history:
+    oneOf:
+      - $ref: '#/component/messages/request'
+      - $ref: '#/component/messages/context'
+

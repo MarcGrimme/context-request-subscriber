@@ -1,18 +1,51 @@
-# SessionTrackingMiddleware
+# ContextRequestTrackingSubscriber
 
-[![Gem Version](https://badge.fury.io/rb/session-tracking-middleware.svg)](https://badge.fury.io/rb/session-tracking-middleware)
-[![Build Status](https://api.travis-ci.org/MarcGrimme/session-tracking-middleware.svg?branch=master)](https://secure.travis-ci.org/MarcGrimme/session-tracking-middleware)
-[![Depfu](https://badges.depfu.com/badges/48a6c1c7c649f62eede6ffa2be843180/count.svg)](https://depfu.com/github/MarcGrimme/session-tracking-middleware?project_id=6900)
-[![Coverage](https://marcgrimme.github.io/session-tracking-middleware/badges/coverage_badge_total.svg)](https://marcgrimme.github.io/session-tracking-middleware/coverage/index.html)
-[![RubyCritic](https://marcgrimme.github.io/session-tracking-middleware/badges/rubycritic_badge_score.svg)](https://marcgrimme.github.io/session-tracking-middleware/tmp/rubycritic/overview.html)
+[![Gem Version](https://badge.fury.io/rb/context-request-subscriber.svg)](https://badge.fury.io/rb/context-request-subscriber)
+[![Build Status](https://api.travis-ci.org/MarcGrimme/context-request-subscriber.svg?branch=master)](https://secure.travis-ci.org/MarcGrimme/context-request-subscriber)
+[![Depfu](https://badges.depfu.com/badges/48a6c1c7c649f62eede6ffa2be843180/count.svg)](https://depfu.com/github/MarcGrimme/context-request-subscriber?project_id=6900)
+[![Coverage](https://marcgrimme.github.io/context-request-subscriber/badges/coverage_badge_total.svg)](https://marcgrimme.github.io/context-request-subscriber/coverage/index.html)
+[![RubyCritic](https://marcgrimme.github.io/context-request-subscriber/badges/rubycritic_badge_score.svg)](https://marcgrimme.github.io/context-request-subscriber/tmp/rubycritic/overview.html)
 
-*SessionTrackingMiddleware* is a rack middleware that can ..
+*ContextRequestTrackingSubscriber* is a Ruby written consumer/subscriber to a queue providing context request messages. The default implementation connects to [RabbitMQ](https://www.rabbitmq.com/) but should be exchangable by overwriting it.
+
+## What is Context Request Tracking
+
+Every request entering a multi service framework leaves a trail of services it hits. Independently for if they are synchronously or asynchronously triggered. In order to follow a request through an application the well known X_REQUEST_ID http header was introduced to push through all requests and therefore track it through the application.
+
+Though the connection from the request to the user or even to the session - let's call it context - is for some use cases of importance. To simplify and provide a normalized way this subscriber is created.
+
+It will just consume these context and request messages.
+
+```
+---------------------------
+| Request                 |
+| request_context: string | 
+| ...                     | ------<> -----------------------
+---------------------------  n:1     | Context             |
+                                     | context_id: string  |
+                                     | owner_id: string    |
+                                     | ...                 |
+                                     -----------------------
+```
+
+Request messages are messages describing an event in each application of the stack the request goes through. The schema of the request can he found here.
+A context is the second message supported by this subscriber that basically connects multiple requests to one another. The *request_context* maps each request to their respective context.
+
+To uniquely describe a context a *context_id* has to be presented in each context message. Each request message also has to provide a *request_context* which is the same as the *context_id* it relates to (see above). The *app_id* references the application involved (it's not really yet clear if the app_id belongs to the context or the request).
+
+## Other components
+
+### ContextRequestMiddleware
+
+To provide these messages from a Rails application look at [ContextRequestMiddleware](https://github.com/MarcGrimme/context-request-middleware)
+
+## Configuration
 
 ## Installation
 
 ```
 # In your gemfile
-gem 'session-tracking-middleware'
+gem 'context-request-subscriber'
 ```
 
 ## Usage
@@ -25,7 +58,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-1. Fork it ( https://github.com/marcgrimme/session-tracking-middleware/fork )
+1. Fork it ( https://github.com/marcgrimme/context-request-subscriber/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
