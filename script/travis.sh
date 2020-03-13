@@ -3,7 +3,6 @@ set -e
 RUBYCRITICLIMIT=${RUBYCRITICLIMIT:-"90.0"}
 QUICK=${QUICK:-}
 
-gem install bundler
 bundle exec rspec
 bundle exec rubocop
 if [ -z "$QUICK" ]; then
