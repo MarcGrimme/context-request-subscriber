@@ -25,7 +25,7 @@ require 'bundler/setup'
 require 'context_request_subscriber'
 require 'byebug'
 
-Dir[File.join('./spec/support/*.rb')].each { |f| require f }
+Dir[File.join('./spec/support/*.rb')].sort.each { |f| require f }
 
 SimpleCovSmallBadge.configure do |config|
   # config.rounded_border = false
