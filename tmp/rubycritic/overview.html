@@ -33,6 +33,9 @@
           <li class="sidebar-item">
             <a href="smells_index.html" class="project-nav-item smells-index-nav"><i class="fa fa-warning"></i>Smells</a>
           </li>
+          <li class="sidebar-item">
+            <a href="simple_cov_index.html" class="project-nav-item coverage-index-nav"><i class="fa fa-umbrella"></i>Coverage</a>
+          </li>
         </ul>
       </aside>
       <!-- /#sidebar-wrapper -->
@@ -58,15 +61,15 @@
         <!--End Grade Wrapper-->
 
         <!--Churn vs Complexity graph-->
-        <div class="col-xs-7 col-sm-7 col-md-6 col-lg-8">
+        <div class="col-xs-12 col-sm-7 col-md-6 col-lg-8">
           <div class="Graph_Cards fadeIn">
             
               <div id="churn-vs-complexity-graph-container" class="chart-container"></div>
             
 
             <script>
-             var turbulenceData = [{"name":"ContextRequestSubscriber","x":2,"y":15.97,"rating":"A"},{"name":"ContextRequestSubscriber::ErrorHandler::LogErrorHandler","x":2,"y":10.48,"rating":"A"},{"name":"Handler","x":1,"y":0.0,"rating":"A"},{"name":"ContextRequestSubscriber::Handler::ContextLoginHistory","x":2,"y":0.0,"rating":"A"},{"name":"ContextRequestSubscriber::Handler::JsonApiHandler::Base","x":1,"y":8.68,"rating":"A"},{"name":"ContextRequestSubscriber::Processor::Executor","x":2,"y":29.46,"rating":"A"},{"name":"ContextRequestSubscriber::Processor::Base","x":2,"y":22.01,"rating":"A"},{"name":"ContextRequestSubscriber::Processor::Context","x":1,"y":0.0,"rating":"A"},{"name":"ContextRequestSubscriber::Processor::Request","x":1,"y":0.0,"rating":"A"},{"name":"ContextRequestSubscriber::RabbitMQSubscriber","x":3,"y":75.58,"rating":"B"},{"name":"ContextRequestSubscriber","x":1,"y":0.0,"rating":"A"}];
-             var score = 96.31;
+             var turbulenceData = [{"name":"ContextRequestSubscriber","x":2,"y":15.97,"rating":"A"},{"name":"ContextRequestSubscriber::ErrorHandler::LogErrorHandler","x":2,"y":10.48,"rating":"A"},{"name":"Handler","x":1,"y":0.0,"rating":"A"},{"name":"ContextRequestSubscriber::Handler::ContextLoginHistory","x":1,"y":0.0,"rating":"A"},{"name":"ContextRequestSubscriber::Handler::JsonApiHandler::Base","x":1,"y":8.68,"rating":"A"},{"name":"ContextRequestSubscriber::Processor::Executor","x":2,"y":32.41,"rating":"A"},{"name":"ContextRequestSubscriber::Processor::Base","x":2,"y":22.01,"rating":"A"},{"name":"ContextRequestSubscriber::Processor::Context","x":1,"y":0.0,"rating":"A"},{"name":"ContextRequestSubscriber::Processor::Request","x":1,"y":0.0,"rating":"A"},{"name":"ContextRequestSubscriber::RabbitMQSubscriber","x":3,"y":76.68,"rating":"B"},{"name":"ContextRequestSubscriber","x":1,"y":0.0,"rating":"A"}];
+             var score = 96.22;
             </script>
           </div>
         </div>
@@ -87,7 +90,7 @@
                     <div class="pull-right Summary_Content col-xs-9 col-sm-9 col-md-9 col-lg-9">
                       <ul class="list-inline">
                         <li><h4 id="ratingAfileCount">10</h4><span>files</span></li>
-                        <li><h4 id="ratingAfileCount">15</h4><span>churns</span></li>
+                        <li><h4 id="ratingAfileCount">14</h4><span>churns</span></li>
                         <li><h4 id="ratingAfileCount">20</h4><span>smells</span></li>
                       </ul>
                     </div>
