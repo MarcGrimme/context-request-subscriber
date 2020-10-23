@@ -20,7 +20,7 @@ and map to contexts)
   s.add_development_dependency 'license_finder', '~> 6.1'
   s.add_development_dependency 'rake', '~> 13'
   s.add_development_dependency 'rspec', '~> 3.8'
-  s.add_development_dependency 'rubocop', '~> 0.65'
+  s.add_development_dependency 'rubocop', '~> 1.0'
   s.add_development_dependency 'rubycritic', '~> 4.1'
   s.add_development_dependency 'rubycritic-small-badge', '~> 0.2'
   s.add_development_dependency 'simplecov', '~> 0.17'
