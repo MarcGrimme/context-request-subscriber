@@ -17,7 +17,7 @@ and map to contexts)
   s.add_runtime_dependency 'activesupport'
   s.add_runtime_dependency 'bunny'
   s.add_runtime_dependency 'json_api_client'
-  s.add_development_dependency 'license_finder', '~> 6.1'
+  s.add_development_dependency 'license_finder', '~> 7.1'
   s.add_development_dependency 'rake', '~> 13'
   s.add_development_dependency 'rspec', '~> 3.8'
   s.add_development_dependency 'rubocop', '~> 1.0'
