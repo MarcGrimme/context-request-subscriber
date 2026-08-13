@@ -23,7 +23,7 @@ and map to contexts)
   s.add_development_dependency 'rubocop', '~> 1.0'
   s.add_development_dependency 'rubycritic', '~> 4.1'
   s.add_development_dependency 'rubycritic-small-badge', '~> 0.2'
-  s.add_development_dependency 'simplecov', '~> 0.17'
+  s.add_development_dependency 'simplecov', '~> 1.1'
   s.add_development_dependency 'simplecov-small-badge', '~> 0.2'
 
   s.files         = `git ls-files`.split("\n")
